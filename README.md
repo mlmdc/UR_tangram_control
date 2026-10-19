@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/assets/tangram-robot-overview.svg" alt="Architecture du projet : interface Tangram en Python, liaison TCP/IP et robot UR5e avec préhenseur" width="100%">
+  <img src="medias/tangram-robot-overview.svg" alt="Architecture du projet : interface Tangram en Python, liaison TCP/IP et robot UR5e avec préhenseur" width="100%">
 </p>
 
 <h1 align="center">UR Tangram Control</h1>
@@ -36,10 +36,20 @@
 
 **FR.** Ce projet relie un éditeur de tangram sur ordinateur à un robot Universal Robots UR5e. Développé dans le cadre du cours de commande des robots de l’Université de Ljubljana, il illustre le passage d’une disposition 2D définie par l’utilisateur à une séquence physique de prise et de dépôt. L’application Python permet de placer les pièces ; le programme robot reçoit leurs poses et exécute les mouvements correspondants.
 
-![Example view of the Pygame tangram editor with all seven pieces; captured without a robot connection.](docs/assets/tangram-editor-example.png)
+![Example view of the Pygame tangram editor with all seven pieces; captured without a robot connection.](medias/tangram-editor-example.png)
 
 *EN: Example editor view; the pieces are arranged for illustration and no robot is connected.*<br>
 *FR : Aperçu de l’éditeur ; les pièces sont disposées à titre d’exemple et aucun robot n’est connecté.*
+
+### Tangram layout examples / Exemples de dispositions
+
+**EN.** These example layouts were arranged in the editor to show different piece positions and rotations. They are visual examples, not verified robot programs.
+
+**FR.** Ces dispositions ont été composées dans l’éditeur pour montrer différentes positions et orientations des pièces. Ce sont des exemples visuels, pas des programmes robot validés.
+
+| Balanced layout / Disposition équilibrée | Rotated pieces / Pièces tournées | Grouped layout / Disposition regroupée |
+| --- | --- | --- |
+| ![Tangram pieces in a balanced layout](medias/tangram-layout-balanced.png) | ![Tangram pieces with varied rotations](medias/tangram-layout-rotated.png) | ![Tangram pieces in a grouped layout](medias/tangram-layout-grouped.png) |
 
 ### Python application
 
@@ -144,7 +154,8 @@ Start the matching PolyScope program during the Python connection window. In the
 | Path | Purpose |
 | --- | --- |
 | `src\` | Python application, Pygame interface, coordinate conversion and TCP communication |
-| `src\medias\` | Interface assets |
+| `src\medias\` | Assets used by the Python interface |
+| `medias\` | README architecture diagram, editor screenshot and example tangram layouts |
 | `RobotControl\tangram.urp` | Main Universal Robots PolyScope project |
 | `RobotControl\` | Robot programs, generated script exports and installation files, including `comm.installation` (identified in the original setup notes as the likely installation) and `tangram_inst.installation` |
 | `tangram_layout.json` | Tangram layout data |
