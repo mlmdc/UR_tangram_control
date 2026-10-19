@@ -1,3 +1,5 @@
+from pathlib import Path
+
 import pygame
 import math
 import numpy as np
@@ -21,7 +23,7 @@ RESET_BUTTON_RECT = pygame.Rect(WIDTH - 320, 10, 90, 30)
 UNDO_BUTTON_RECT = pygame.Rect(WIDTH - 430, 10, 90, 30)
 REDO_BUTTON_RECT = pygame.Rect(WIDTH - 540, 10, 90, 30)
 
-TRASHCAN_ICON = pygame.image.load("trashcan.png")  # Ensure this image is available
+TRASHCAN_ICON = pygame.image.load(str(Path(__file__).resolve().parent.parent / "medias" / "trashcan.png"))
 TRASHCAN_ICON = pygame.transform.scale(TRASHCAN_ICON, (30, 30))
 
 # Colors
@@ -32,7 +34,7 @@ screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Tangram Game")
 
 # Load sound effects
-snap_sound = pygame.mixer.Sound("snap.mp3")  # Ensure this sound file is available
+snap_sound = pygame.mixer.Sound(str(Path(__file__).resolve().parent.parent / "medias" / "snap.mp3"))
 
 class Shape:
     def __init__(self, shape_type, center, angle=0):

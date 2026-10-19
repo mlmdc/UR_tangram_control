@@ -1,3 +1,5 @@
+from pathlib import Path
+
 import pygame
 import cfg
 from shapes import init_shapes, init_shapes_size, extract_counts
@@ -12,9 +14,9 @@ def pygame_init():
 def load_assets():
 	cfg.font = pygame.font.Font(None, 24)
 	cfg.COLORS = [(255, 0, 0), (0, 255, 0), (0, 0, 255), (255, 255, 0), (255, 165, 0), (128, 0, 128), (0, 255, 255)]
-	cfg.TRASHCAN_ICON = pygame.image.load("trashcan.png")  # Ensure this image is available
+	cfg.TRASHCAN_ICON = pygame.image.load(str(Path(__file__).resolve().parent.parent / "medias" / "trashcan.png"))
 	cfg.TRASHCAN_ICON = pygame.transform.scale(cfg.TRASHCAN_ICON, (30, 30))
-	cfg.snap_sound = pygame.mixer.Sound("snap.mp3")  # Ensure this sound file is available
+	cfg.snap_sound = pygame.mixer.Sound(str(Path(__file__).resolve().parent.parent / "medias" / "snap.mp3"))
 
 # Define Tangram Pieces (with center reference)
 def init_pieces():
