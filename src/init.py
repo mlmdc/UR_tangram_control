@@ -14,9 +14,9 @@ def pygame_init():
 def load_assets():
 	cfg.font = pygame.font.Font(None, 24)
 	cfg.COLORS = [(255, 0, 0), (0, 255, 0), (0, 0, 255), (255, 255, 0), (255, 165, 0), (128, 0, 128), (0, 255, 255)]
-	cfg.TRASHCAN_ICON = pygame.image.load(str(Path(__file__).resolve().parent.parent / "medias" / "trashcan.png"))
+	cfg.TRASHCAN_ICON = pygame.image.load(str(Path(__file__).resolve().parent / "medias" / "trashcan.png"))
 	cfg.TRASHCAN_ICON = pygame.transform.scale(cfg.TRASHCAN_ICON, (30, 30))
-	cfg.snap_sound = pygame.mixer.Sound(str(Path(__file__).resolve().parent.parent / "medias" / "snap.mp3"))
+	cfg.snap_sound = pygame.mixer.Sound(str(Path(__file__).resolve().parent / "medias" / "snap.mp3"))
 
 # Define Tangram Pieces (with center reference)
 def init_pieces():
