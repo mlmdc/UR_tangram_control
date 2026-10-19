@@ -25,6 +25,7 @@
 - [Results and learnings / Résultats et apprentissages](#results-and-learnings)
 - [Getting started](#getting-started)
 - [Project files / Fichiers du projet](#project-files)
+- [Contributors / Contributeurs](#contributors)
 - [Credits / Crédits](#credits)
 
 <a id="overview"></a>
@@ -34,6 +35,11 @@
 **EN.** This project connects a desktop tangram editor to a Universal Robots UR5e. It was developed for the Robot Control course at the University of Ljubljana and demonstrates a path from a user-defined 2D layout to a physical pick-and-place sequence. The Python application lets an operator arrange the pieces; the robot program receives their poses and performs the corresponding moves.
 
 **FR.** Ce projet relie un éditeur de tangram sur ordinateur à un robot Universal Robots UR5e. Développé dans le cadre du cours de commande des robots de l’Université de Ljubljana, il illustre le passage d’une disposition 2D définie par l’utilisateur à une séquence physique de prise et de dépôt. L’application Python permet de placer les pièces ; le programme robot reçoit leurs poses et exécute les mouvements correspondants.
+
+![Example view of the Pygame tangram editor with all seven pieces; captured without a robot connection.](docs/assets/tangram-editor-example.png)
+
+*EN: Example editor view; the pieces are arranged for illustration and no robot is connected.*<br>
+*FR : Aperçu de l’éditeur ; les pièces sont disposées à titre d’exemple et aucun robot n’est connecté.*
 
 ### Python application
 
@@ -57,9 +63,17 @@
 
 ## Problem and approach / Problématique et approche
 
-**EN.** Manually translating a visual 2D arrangement into robot targets is error-prone. The project provides a direct workflow from arranging the pieces to exporting their poses, while keeping the graphical interaction on the PC and the motion sequence on the robot controller. The setup depends on a reachable, calibrated work area and matching network addresses.
+**EN.** A robot pick-and-place task needs target positions and orientations in the robot's coordinate frame, while an operator naturally plans the arrangement visually. Manually converting each screen position into a robot pose is repetitive and makes it harder to revise the plan consistently. This project addresses that gap with a graphical editor linked directly to the robot program.
 
-**FR.** Convertir manuellement une disposition 2D en cibles robot est source d’erreurs. Le projet propose un flux direct, de la composition des pièces à l’export de leurs poses, en séparant l’interaction graphique sur PC de la séquence de mouvement exécutée par le contrôleur. Le dispositif nécessite une zone de travail calibrée et atteignable, ainsi que des adresses réseau concordantes.
+**FR.** Une opération robotisée de prise et de dépôt nécessite des positions et des orientations dans le repère du robot, alors que l’opérateur conçoit plus naturellement la disposition à l’écran. Convertir manuellement chaque position graphique en pose robot est répétitif et complique les ajustements cohérents du plan. Le projet répond à ce besoin avec un éditeur graphique relié directement au programme du robot.
+
+**EN.** The operator builds a layout from the seven-piece tangram inventory, moving pieces on a 2D board. Snapping helps align vertices; keyboard rotation changes orientation in 15-degree steps, and undo, redo, reset and removal support iteration. On export, the Python application maps screen coordinates to the configured robot work area and converts each piece's position and angle to a six-value pose. It sends seven pose slots over TCP. The PolyScope program receives those targets and sequences the corresponding picks and placements.
+
+**FR.** L’opérateur compose la disposition à partir des sept pièces du tangram et les déplace sur un plateau 2D. L’alignement magnétique aide à rapprocher les sommets ; la rotation au clavier s’effectue par incréments de 15 degrés. Les fonctions annuler, rétablir, réinitialiser et supprimer facilitent les ajustements. À l’export, l’application Python convertit les coordonnées écran vers la zone de travail configurée du robot et transforme la position et l’angle de chaque pièce en une pose à six valeurs. Elle transmet sept emplacements de pose par TCP. Le programme PolyScope reçoit les cibles et enchaîne les prises et dépôts correspondants.
+
+**EN.** This separation keeps interaction and layout editing on the PC, while motion execution remains on the UR controller. The workflow depends on the PC and robot being reachable on the same configured network, and on the coordinate mapping, offsets, gripper and robot workspace being calibrated for the physical installation. The interface prepares targets; it does not replace robot safety checks or validate that a layout is collision-free.
+
+**FR.** Cette séparation conserve l’interaction et l’édition de la disposition sur PC, tandis que l’exécution des mouvements reste sur le contrôleur UR. Le flux suppose que le PC et le robot soient joignables sur le réseau configuré, et que la conversion des coordonnées, les décalages, le préhenseur et la zone de travail soient calibrés pour l’installation physique. L’interface prépare les cibles ; elle ne remplace pas les contrôles de sécurité du robot et ne vérifie pas l’absence de collisions dans la disposition.
 
 <a id="technical-decisions"></a>
 
@@ -73,9 +87,9 @@
 
 ## Results and learnings / Résultats et apprentissages
 
-**EN.** The repository contains both sides of the workflow: a 2D layout editor that exports seven poses and a UR5e program that consumes them for pick-and-place. It demonstrates the coordinate conversion and TCP hand-off between a desktop interface and a robot controller. The project does not include automated tests or recorded measurements of physical accuracy. Current limitations include hard-coded IP addresses and work-area calibration, a 10-second Python connection-accept timeout, no automatic recovery after a lost connection, and no ACK-gated send loop on the Python side. Export always sends seven pose slots; unplaced pieces retain the configured default pose. A next iteration could externalize configuration, make message acknowledgement and reconnect behavior explicit, and test pose conversion independently of the robot.
+**EN.** The project brings together a usable tangram editor and a UR5e pick-and-place program: an operator can arrange pieces on screen and send their target poses to the robot over TCP. It demonstrates the full hand-off from a visual layout to robot motion. Physical accuracy measurements and automated end-to-end tests are not included.
 
-**FR.** Le dépôt contient les deux côtés du flux : un éditeur 2D qui exporte sept poses et un programme UR5e qui les utilise pour la prise et le dépôt. Le projet met en œuvre la conversion de coordonnées et le transfert TCP entre une interface de bureau et un contrôleur robot. Il ne contient ni tests automatisés ni mesures enregistrées de précision physique. Ses limites actuelles comprennent des adresses IP et une calibration de zone codées en dur, un délai de 10 secondes pour l’acceptation de la connexion Python, l’absence de reconnexion automatique après une perte de liaison et l’absence d’attente des ACK dans la boucle d’envoi Python. L’export transmet toujours sept emplacements de pose ; les pièces non placées conservent leur pose par défaut. Une évolution utile consisterait à externaliser la configuration, à expliciter les acquittements et la reconnexion, puis à tester la conversion des poses indépendamment du robot.
+**FR.** Le projet réunit un éditeur de tangram utilisable et un programme de prise et de dépôt pour UR5e : l’opérateur compose une disposition à l’écran et transmet les poses cibles au robot par TCP. Il met en œuvre toute la chaîne, de la disposition visuelle au mouvement du robot. Aucune mesure de précision physique ni aucun test automatisé de bout en bout n’est fourni.
 
 ## Getting started
 
@@ -135,10 +149,17 @@ Start the matching PolyScope program during the Python connection window. In the
 | `RobotControl\` | Robot programs, generated script exports and installation files, including `comm.installation` (identified in the original setup notes as the likely installation) and `tangram_inst.installation` |
 | `tangram_layout.json` | Tangram layout data |
 
+<a id="contributors"></a>
+
+## Contributors / Contributeurs
+
+- Mael Madec
+- [Riccardo Simion](https://github.com/simionRiccard0/)
+
 <a id="credits"></a>
 
 ## Credits / Crédits
 
-**EN.** The TCP communication examples and initial code base were provided by Sebastjan Šlajpah ([sebastjan.slajpah@fe.uni-lj.si](mailto:sebastjan.slajpah@fe.uni-lj.si)): [sslajpah/ur_tcpip](https://github.com/sslajpah/ur_tcpip). Contributors: Mael Madec and Riccardo Simion.
+**EN.** The TCP communication examples and initial code base were provided by Sebastjan Šlajpah ([sebastjan.slajpah@fe.uni-lj.si](mailto:sebastjan.slajpah@fe.uni-lj.si)): [sslajpah/ur_tcpip](https://github.com/sslajpah/ur_tcpip).
 
-**FR.** Les exemples de communication TCP et la base initiale du code ont été fournis par Sebastjan Šlajpah ([sebastjan.slajpah@fe.uni-lj.si](mailto:sebastjan.slajpah@fe.uni-lj.si)) : [sslajpah/ur_tcpip](https://github.com/sslajpah/ur_tcpip). Contributeurs : Mael Madec et Riccardo Simion.
+**FR.** Les exemples de communication TCP et la base initiale du code ont été fournis par Sebastjan Šlajpah ([sebastjan.slajpah@fe.uni-lj.si](mailto:sebastjan.slajpah@fe.uni-lj.si)) : [sslajpah/ur_tcpip](https://github.com/sslajpah/ur_tcpip).
