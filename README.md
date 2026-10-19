@@ -38,10 +38,15 @@ sudo ip addr add 192.168.65.XXX/24 dev __device_name__
 
 Before launching, check if :
 1. The PC has an open port for communication.
-2. The IP address in cfg.py is the same as the open port.
+2. The IP address in `src\cfg.py` is the same as the open port.
 3. The IP address in tangram.urp is matching too.
 
 ### The program
+
+From the repository root, launch the Python application with:
+```bash
+python src\main.py
+```
 
 Once launched, the robot waits endlessly for connecting to the PC.
 Meanwhile, the python part is waiting 10s before dropping off and showing the user interface (it is for debug reasons). If it connects before the 10s, it quickly shows the GUI.
