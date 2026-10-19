@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 390" role="img" aria-labelledby="title desc">
+  <title id="title">UR Tangram Control project overview</title>
+  <desc id="desc">A Pygame tangram editor sends target poses over TCP/IP to a UR5e robot program.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#101b31"/>
+      <stop offset="1" stop-color="#1c3150"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#243b5d"/>
+      <stop offset="1" stop-color="#1b2d49"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0 0 10 5 0 10Z" fill="#70d7c2"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="390" rx="26" fill="url(#background)"/>
+  <circle cx="1082" cy="36" r="130" fill="#70d7c2" opacity=".06"/>
+  <circle cx="132" cy="374" r="170" fill="#ffb454" opacity=".05"/>
+
+  <text x="54" y="55" fill="#70d7c2" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="700" letter-spacing="3">ROBOT CONTROL PROJECT</text>
+  <text x="54" y="88" fill="#f5f7fb" font-family="Segoe UI,Arial,sans-serif" font-size="24" font-weight="700">From a screen layout to robot motion</text>
+
+  <rect x="54" y="117" width="350" height="210" rx="17" fill="url(#panel)" stroke="#456080"/>
+  <rect x="74" y="137" width="310" height="148" rx="9" fill="#f5f7fb"/>
+  <rect x="74" y="137" width="310" height="25" rx="9" fill="#dce5ef"/>
+  <circle cx="91" cy="149" r="4" fill="#f08275"/>
+  <circle cx="106" cy="149" r="4" fill="#f2c16b"/>
+  <circle cx="121" cy="149" r="4" fill="#70c99b"/>
+  <path d="m151 190 44 0-22 38Z" fill="#f2a541"/>
+  <path d="m195 190 43 0-21 38Z" fill="#55b9a8"/>
+  <path d="m172 228 43 0-21 36Z" fill="#4f82c4"/>
+  <path d="m238 190 34 0 0 34-34 0Z" fill="#9c78c8"/>
+  <path d="m272 224 34-34 0 68Z" fill="#e87872"/>
+  <path d="m151 264 42 0-21-36Z" fill="#e6c94f"/>
+  <path d="m215 264 42 0-21-36Z" fill="#db795f"/>
+  <rect x="86" y="298" width="100" height="7" rx="3.5" fill="#617d9c"/>
+  <rect x="194" y="298" width="60" height="7" rx="3.5" fill="#405c7a"/>
+  <text x="278" y="306" text-anchor="end" fill="#d5e0ec" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="600">PYTHON · PYGAME</text>
+
+  <path d="M428 219h110" fill="none" stroke="#70d7c2" stroke-width="3" marker-end="url(#arrow)"/>
+  <rect x="443" y="177" width="92" height="27" rx="13.5" fill="#1d3b4b" stroke="#477b7b"/>
+  <text x="489" y="195" text-anchor="middle" fill="#a8eee0" font-family="Segoe UI,Arial,sans-serif" font-size="12" font-weight="700">TCP/IP · 8888</text>
+  <text x="483" y="254" text-anchor="middle" fill="#b8c8d9" font-family="Segoe UI,Arial,sans-serif" font-size="12">7 target poses</text>
+
+  <rect x="572" y="117" width="574" height="210" rx="17" fill="url(#panel)" stroke="#456080"/>
+  <path d="M619 284h194" stroke="#7890aa" stroke-width="5" stroke-linecap="round"/>
+  <path d="M705 279c-2-21 5-38 20-50" fill="none" stroke="#aabbd0" stroke-width="17" stroke-linecap="round"/>
+  <circle cx="727" cy="226" r="13" fill="#203651" stroke="#70d7c2" stroke-width="5"/>
+  <path d="M733 216l31-38" fill="none" stroke="#aabbd0" stroke-width="16" stroke-linecap="round"/>
+  <circle cx="769" cy="173" r="12" fill="#203651" stroke="#70d7c2" stroke-width="5"/>
+  <path d="M776 167l35 17" fill="none" stroke="#aabbd0" stroke-width="14" stroke-linecap="round"/>
+  <circle cx="815" cy="187" r="10" fill="#203651" stroke="#70d7c2" stroke-width="4"/>
+  <path d="M823 191l24 28" fill="none" stroke="#aabbd0" stroke-width="12" stroke-linecap="round"/>
+  <path d="M845 216l13-5m-13 5 1 14" fill="none" stroke="#ffb454" stroke-width="5" stroke-linecap="round"/>
+  <rect x="668" y="283" width="73" height="9" rx="4.5" fill="#617d9c"/>
+  <rect x="815" y="143" width="12" height="12" rx="2" fill="#f2a541"/>
+  <path d="m837 152 14 0-7 12Z" fill="#55b9a8"/>
+  <path d="m855 159 13 0-7 12Z" fill="#4f82c4"/>
+  <text x="899" y="181" fill="#f5f7fb" font-family="Segoe UI,Arial,sans-serif" font-size="22" font-weight="700">UR5e</text>
+  <text x="899" y="207" fill="#c2d0df" font-family="Segoe UI,Arial,sans-serif" font-size="14">PolyScope program</text>
+  <text x="899" y="230" fill="#c2d0df" font-family="Segoe UI,Arial,sans-serif" font-size="14">Pick · move · place</text>
+  <rect x="899" y="250" width="130" height="25" rx="12.5" fill="#1d3b4b" stroke="#477b7b"/>
+  <text x="964" y="267" text-anchor="middle" fill="#a8eee0" font-family="Segoe UI,Arial,sans-serif" font-size="12" font-weight="700">ROBOT + GRIPPER</text>
+  <text x="594" y="306" fill="#d5e0ec" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="600">UNIVERSAL ROBOTS</text>
+</svg>
