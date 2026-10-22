@@ -65,6 +65,8 @@ Un opérateur dispose sept pièces de tangram sur un plateau 2D. L’application
 
 The work-area mapping and offsets are installation settings-not values measured from a camera or the table. **The editor prepares targets; it does not check reachability or plan collision-free paths.**
 
+<br>
+
 **🇫🇷 FR** - L’éditeur utilise des coordonnées écran, tandis que le robot attend des positions et orientations dans son propre repère. L’application assure la conversion :
 
 1. Elle enregistre le type, le centre 2D et l’angle de chaque pièce.
@@ -88,6 +90,8 @@ Snapping uses pixel distance and does **not** validate a tangram solution.
 `src/main.py` exports seven poses in a fixed order: medium triangle, two small triangles, two large triangles, square and parallelogram. It maps screen coordinates to the configured robot area, applies piece-specific angle adjustments and sends the poses to PolyScope.
 
 Export always includes seven slots. An unplaced piece retains the default pose from `src/cfg.py`; the robot program still executes all seven cycles. As a result, an incomplete layout can cause motion toward default targets.
+
+<br>
 
 ### **🇫🇷 FR** - Interactions de l’éditeur
 
@@ -119,6 +123,8 @@ The repository includes **no calibration procedure or accuracy measurements**. C
 
 This is a simple application protocol, not a framed or fault-tolerant transport. Python sends an `ACK` string followed by seven poses. The robot responds with acknowledgements, but Python does not wait for or validate them. The server waits up to 10 seconds for a connection at startup and does not retry.
 
+<br>
+
 ### **🇫🇷 FR** - Technologies et responsabilités
 
 Pygame fournit l’éditeur, NumPy les opérations numériques, et les modules Python `socket`, `threading` et `queue` la communication. Python convertit et envoie les cibles ; PolyScope contrôle les mouvements du robot et le préhenseur.
@@ -139,6 +145,8 @@ Il s’agit d’un protocole applicatif simple, sans cadrage des messages ni rep
 **🇬🇧 EN** - The repository includes the Pygame editor, a PolyScope project and visual layout examples. Together, they demonstrate manual layout, seven-pose TCP transfer and a robot-side pick-and-place sequence. **Images show editor arrangements only; they do not confirm successful robot execution.**
 
 The project provides no physical-accuracy measurements, systematic method comparison or automated end-to-end test results. It does not check calibration, reachability, collisions, safe separation, gripper compatibility or receipt of every pose.
+
+<br>
 
 **🇫🇷 FR** - Le dépôt comprend l’éditeur Pygame, un projet PolyScope et des exemples visuels. Ensemble, ils illustrent la composition manuelle, le transfert TCP de sept poses et une séquence de prise et de dépôt côté robot. **Les images montrent uniquement des dispositions dans l’éditeur ; elles ne confirment pas une exécution réussie par le robot.**
 
