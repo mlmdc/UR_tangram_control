@@ -222,3 +222,7 @@ flowchart TD
 ## Credits
 
 **🇬🇧 EN** - The TCP communication examples and initial code base were provided by Sebastjan Šlajpah ([sebastjan.slajpah@fe.uni-lj.si](mailto:sebastjan.slajpah@fe.uni-lj.si)): [sslajpah/ur_tcpip](https://github.com/sslajpah/ur_tcpip).
+
+## License
+
+Released under the [MIT License](LICENSE).
