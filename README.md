@@ -37,6 +37,8 @@
 
 An operator arranges seven tangram pieces on a 2D board. The Python application converts their positions and rotations into robot-frame poses and sends them over TCP to a PolyScope pick-and-place program. **The project demonstrates this workflow; it is not a general-purpose motion planner.**
 
+![Universal Robots UR5e collaborative robot](medias/cobotica-universal-robots-robot-ur5e-2635489067.jpg)
+
 **🇫🇷 FR** - Développé dans le cadre du cours de commande des robots de l’Université de Ljubljana, ce projet relie un éditeur de tangram à un Universal Robots UR5e.
 
 Un opérateur dispose sept pièces de tangram sur un plateau 2D. L’application Python convertit leurs positions et rotations en poses dans le repère du robot, puis les transmet par TCP à un programme PolyScope de prise et de dépôt. **Le projet illustre ce flux ; ce n’est pas un planificateur de mouvement généraliste.**
@@ -141,13 +143,9 @@ Il s’agit d’un protocole applicatif simple, sans cadrage des messages ni rep
 
 The project provides no physical-accuracy measurements, systematic method comparison or automated end-to-end test results. It does not check calibration, reachability, collisions, safe separation, gripper compatibility or receipt of every pose.
 
-> **Safety / Sécurité:** The repository does not validate calibration, default poses, targets or paths against a physical cell. Their suitability and safe operation depend on the specific installation and its safety procedures. / Le dépôt ne vérifie pas l’étalonnage, les poses par défaut, les cibles ni les trajectoires pour une cellule physique. Leur adéquation et la sécurité de l’exécution dépendent de l’installation concernée et de ses procédures de sécurité.
-
 **🇫🇷 FR** - Le dépôt comprend l’éditeur Pygame, un projet PolyScope et des exemples visuels. Ensemble, ils illustrent la composition manuelle, le transfert TCP de sept poses et une séquence de prise et de dépôt côté robot. **Les images montrent uniquement des dispositions dans l’éditeur ; elles ne confirment pas une exécution réussie par le robot.**
 
 Le projet ne fournit ni mesures de précision physique, ni comparaison systématique de méthodes, ni résultats de tests automatisés de bout en bout. Il ne vérifie pas l’étalonnage, l’accessibilité, les collisions, les distances de sécurité, la compatibilité du préhenseur ou la réception de chaque pose.
-
-> **Sécurité :** vérifiez l’étalonnage, les poses par défaut, les cibles et les trajectoires pour la cellule utilisée. Respectez ses procédures de sécurité avant toute exécution.
 
 <a id="getting-started"></a>
 
@@ -203,7 +201,7 @@ flowchart TD
 | `src/medias/` | Interface assets, including the snap sound and trash icon |
 | `RobotControl/tangram.urp` | PolyScope project |
 | `RobotControl/tangram.script` and `RobotControl/tangram.txt` | Readable robot-program exports |
-| `medias/` | README architecture diagram, editor screenshot and illustrative layouts |
+| `medias/` | README architecture diagram, UR5e image, editor screenshot and illustrative layouts |
 | `ur_tcpip-main/` | Included TCP/IP example code; not required to launch the tangram editor |
 | `tangram_layout.json` | Example layout data; not loaded by the current application |
 
