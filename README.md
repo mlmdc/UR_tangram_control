@@ -33,11 +33,11 @@
 
 ## Overview / Présentation
 
+<img src="medias/cobotica-universal-robots-robot-ur5e-2635489067.jpg" alt="Architecture : éditeur Tangram en Python, communication TCP/IP et robot UR5e avec préhenseur" width="70%">
+
 **🇬🇧 EN** - Developed for the Robot Control course at the University of Ljubljana, this project links a desktop tangram editor with a Universal Robots UR5e.
 
 An operator arranges seven tangram pieces on a 2D board. The Python application converts their positions and rotations into robot-frame poses and sends them over TCP to a PolyScope pick-and-place program. **The project demonstrates this workflow; it is not a general-purpose motion planner.**
-
-![Universal Robots UR5e collaborative robot](medias/cobotica-universal-robots-robot-ur5e-2635489067.jpg)
 
 **🇫🇷 FR** - Développé dans le cadre du cours de commande des robots de l’Université de Ljubljana, ce projet relie un éditeur de tangram à un Universal Robots UR5e.
 
@@ -45,12 +45,9 @@ Un opérateur dispose sept pièces de tangram sur un plateau 2D. L’application
 
 ![Pygame editor showing the seven tangram pieces; this screenshot was captured without a robot connection.](medias/tangram-editor-example.png)
 
-*EN: The editor view illustrates the interface only; no robot is connected in this screenshot.*<br>
-*FR : Cette capture illustre uniquement l’interface ; aucun robot n’y est connecté.*
+**🇬🇧 EN** - The following layouts were also arranged in the editor. They illustrate different positions and rotations.
 
-**🇬🇧 EN** - The following layouts were also arranged in the editor. They illustrate different positions and rotations, not validated robot targets.
-
-**🇫🇷 FR** - Les dispositions suivantes ont également été composées dans l’éditeur. Elles illustrent différentes positions et rotations, sans constituer des cibles robot validées.
+**🇫🇷 FR** - Les dispositions suivantes ont également été composées dans l’éditeur. Elles illustrent différentes positions et rotations.
 
 | Balanced layout / Disposition équilibrée | Rotated pieces / Pièces tournées | Grouped layout / Disposition regroupée |
 | --- | --- | --- |
