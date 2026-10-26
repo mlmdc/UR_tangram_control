@@ -17,6 +17,8 @@
 
 <a id="contents"></a>
 
+[← Back to portfolio](https://mlmdc.github.io/mlmdc_portfolio/) · [Sommaire / Contents](#sommaire--contents) · [Rapport / Report](Report.pdf)
+
 ## Contents / Sommaire
 
 - [Overview / Présentation](#overview)
