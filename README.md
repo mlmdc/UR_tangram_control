@@ -9,12 +9,6 @@
   <strong>FR :</strong> D’une disposition 2D de tangram à des poses robot pour un Universal Robots UR5e.
 </p>
 
-<p align="center">
-  <a href="https://github.com/mlmdc">← Back to profile / Retour au profil</a>
-  &nbsp;·&nbsp;
-  <a href="#contents">Contents / Sommaire</a>
-</p>
-
 <a id="contents"></a>
 
 [← Back to portfolio](https://mlmdc.github.io/mlmdc_portfolio/) · [Sommaire / Contents](#sommaire--contents) · [Rapport / Report](Report.pdf)
