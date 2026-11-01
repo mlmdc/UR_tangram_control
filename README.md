@@ -29,7 +29,7 @@
 
 ## Overview / Présentation
 
-<img src="medias/cobotica-universal-robots-robot-ur5e-2635489067.jpg" alt="Architecture : éditeur Tangram en Python, communication TCP/IP et robot UR5e avec préhenseur" width="70%">
+<img src="medias/cobotica-universal-robots-robot-ur5e-2635489067.jpg" alt="Architecture : éditeur Tangram en Python, communication TCP/IP et robot UR5e avec préhenseur" width="50%" style="display: block; margin: 0 auto;">
 
 **🇬🇧 EN** - Developed for the Robot Control course at the University of Ljubljana, this project links a desktop tangram editor with a Universal Robots UR5e.
 
