@@ -11,7 +11,7 @@
 
 <a id="contents"></a>
 
-[← Back to portfolio](https://mlmdc.github.io/mlmdc_portfolio/) · [Sommaire / Contents](#sommaire--contents) · [Rapport / Report](Report.pdf)
+[← Back to portfolio](https://mlmdc.github.io/mlmdc_portfolio/) · [Sommaire / Contents](#sommaire--contents) <!-- · [Rapport / Report](Report.pdf) -->
 
 ## Contents / Sommaire
 
@@ -29,15 +29,15 @@
 
 ## Overview / Présentation
 
-<img src="medias/cobotica-universal-robots-robot-ur5e-2635489067.jpg" alt="Architecture : éditeur Tangram en Python, communication TCP/IP et robot UR5e avec préhenseur" width="50%" style="display: block; margin: 0 auto;">
+<img src="medias/cobotica-universal-robots-robot-ur5e-2635489067.jpg" alt="Architecture : éditeur Tangram en Python, communication TCP/IP et robot UR5e avec préhenseur" width="50%">
 
 **🇬🇧 EN** - Developed for the Robot Control course at the University of Ljubljana, this project links a desktop tangram editor with a Universal Robots UR5e.
 
-An operator arranges seven tangram pieces on a 2D board. The Python application converts their positions and rotations into robot-frame poses and sends them over TCP to a PolyScope pick-and-place program. **The project demonstrates this workflow; it is not a general-purpose motion planner.**
+An operator arranges seven tangram pieces on a 2D board. The Python application converts their positions and rotations into robot-frame poses and sends them over TCP to a PolyScope pick-and-place program. **The project demonstrates this workflow, it is not a general-purpose motion planner.**
 
 **🇫🇷 FR** - Développé dans le cadre du cours de commande des robots de l’Université de Ljubljana, ce projet relie un éditeur de tangram à un Universal Robots UR5e.
 
-Un opérateur dispose sept pièces de tangram sur un plateau 2D. L’application Python convertit leurs positions et rotations en poses dans le repère du robot, puis les transmet par TCP à un programme PolyScope de prise et de dépôt. **Le projet illustre ce flux ; ce n’est pas un planificateur de mouvement généraliste.**
+Un opérateur dispose sept pièces de tangram sur un plateau 2D. L’application Python convertit leurs positions et rotations en poses dans le repère du robot, puis les transmet par TCP à un programme PolyScope de prise et de dépôt. **Le projet illustre ce flux, ce n’est pas un planificateur de mouvement généraliste.**
 
 ![Pygame editor showing the seven tangram pieces; this screenshot was captured without a robot connection.](medias/tangram-editor-example.png)
 
@@ -57,7 +57,7 @@ Un opérateur dispose sept pièces de tangram sur un plateau 2D. L’application
 
 1. It records each piece’s type, 2D center and angle.
 2. It maps the center to the configured work area and builds a six-value pose (position plus rotation vector).
-3. It sends the poses over TCP to the PolyScope client on port `8888`.
+3. It sends the poses over TCP to the arm controller.
 
 The work-area mapping and offsets are installation settings-not values measured from a camera or the table. **The editor prepares targets; it does not check reachability or plan collision-free paths.**
 
@@ -67,7 +67,7 @@ The work-area mapping and offsets are installation settings-not values measured 
 
 1. Elle enregistre le type, le centre 2D et l’angle de chaque pièce.
 2. Elle convertit le centre selon la zone de travail configurée et forme une pose à six valeurs (position et vecteur de rotation).
-3. Elle transmet les poses par TCP au client PolyScope, sur le port `8888`.
+3. Elle transmet les poses par TCP au contrôleur du bras.
 
 La correspondance avec la zone de travail et les décalages sont des paramètres d’installation : ils ne sont pas mesurés par caméra ou à partir de la table. **L’éditeur prépare les cibles ; il ne vérifie ni leur accessibilité ni l’absence de collision des trajectoires.**
 
