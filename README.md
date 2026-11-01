@@ -4,9 +4,9 @@
 
 <h1 align="center">UR Tangram Control</h1>
 
-<p align="right">
-  <strong>🇬🇧 **EN** - </strong> From a 2D tangram layout to robot-frame poses for a Universal Robots UR5e.<br>
-  <strong>🇫🇷 **FR** - </strong> D’une disposition 2D de tangram à des poses robot pour un Universal Robots UR5e.
+<p align="left">
+  <strong>🇬🇧 EN - </strong> From a 2D tangram layout to robot-frame poses for a Universal Robots UR5e.<br>
+  <strong>🇫🇷 FR - </strong> D’une disposition 2D de tangram à des poses robot pour un Universal Robots UR5e.
 </p>
 
 <a id="contents"></a>
